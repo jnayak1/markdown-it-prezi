@@ -1,0 +1,29 @@
+Coverage. Youtube
+.
+@[youtube](x)
+.
+<p><iframe id="ytplayer" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/x" frameborder="0"/></p>
+.
+.
+@[youtube]( x)
+.
+<p><iframe id="ytplayer" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/x" frameborder="0"/></p>
+.
+.
+@[youtube]( x )
+.
+<p><iframe id="ytplayer" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/x" frameborder="0"/></p>
+.
+.
+@[youtube](
+x )
+.
+<p><iframe id="ytplayer" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/x" frameborder="0"/></p>
+.
+.
+@[youtube](
+x
+ )
+.
+<p><iframe id="ytplayer" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/x" frameborder="0"/></p>
+.

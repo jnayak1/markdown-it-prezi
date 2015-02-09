@@ -1,10 +1,10 @@
 {
-  "name": "markdown-it-imsize",
+  "name": "markdown-it-youtube",
   "version": "0.1.0",
   "authors": [
-    "tatsy <tatsy.mail@gmail.com>"
+    "Brian J. Geiger <bgeiger@pobox.com>"
   ],
-  "description": "Markdown-it plugin to specify image size",
+  "description": "Markdown-it plugin to embed a youtube video",
   "main": "index.js",
   "kewords": [
     "markdown-it",

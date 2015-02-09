@@ -1,21 +1,21 @@
 {
-  "name": "markdown-it-imsize",
+  "name": "markdown-it-youtube",
   "version": "0.1.2",
-  "description": "Markdown-it plugin to specify image size",
+  "description": "Markdown-it plugin to embed a Youtube video",
   "main": "index.js",
   "scripts": {
     "test": "make test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tatsy/markdown-it-imsize"
+    "url": "https://github.com/brianjgeiger/markdown-it-youtube"
   },
   "author": "tatsy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tatsy/markdown-it-imsize/issues"
+    "url": "https://github.com/brianjgeiger/markdown-it-youtube/issues"
   },
-  "homepage": "https://github.com/tatsy/markdown-it-imsize",
+  "homepage": "https://github.com/brianjgeiger/markdown-it-imsize",
   "keywords": [
     "markdown-it",
     "markdown-it-plugin"
