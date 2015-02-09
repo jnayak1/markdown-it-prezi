@@ -17,7 +17,7 @@ var md = require('markdown-it')({
 #### Example
 
 ```md
-!![youtube](dQw4w9WgXcQ)
+@[youtube](dQw4w9WgXcQ)
 ```
 
 is interpreted as
@@ -27,3 +27,8 @@ is interpreted as
   src="http://www.youtube.com/embed/dQw4w9WgXcQ"
   frameborder="0"/>
 ```
+
+## Notes
+
+This is a rough prototype. What it should be doing is checking for the service type and embedding for a variety of
+services. Instead, it's hardcoded to YouTube. It's also being used as an Image plugin, and that's probably not correct.
