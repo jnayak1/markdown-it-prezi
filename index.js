@@ -2,14 +2,12 @@
 
 'use strict';
 
-var parseImageSize = require('./helpers/parse_image_size');
-var normalizeReference = require('./helpers/normalize_reference.js');
-
-function youtube_embed(md) {
-  function youtube_return(state, silent) {
+function video_embed(md) {
+  function video_return(state, silent) {
     var code,
         serviceEnd,
         serviceStart,
+        service,
         pos,
         res,
         videoID = '',
@@ -34,7 +32,7 @@ function youtube_embed(md) {
       // Inline link
       //
 
-      // [link](  <videoID>  "title"  )
+      // [service](  <videoID>  "title"  )
       //    ^^ skipping these spaces
       pos++;
       for (; pos < max; pos++) {
@@ -43,7 +41,7 @@ function youtube_embed(md) {
       }
       if (pos >= max) { return false; }
 
-      // [link](  <videoID>  "title"  )
+      // [service](  <videoID>  "title"  )
       //      ^^^^^^ parsing link destination
       start = pos;
       res = md.helpers.parseLinkDestination(state.src, pos, state.posMax);
@@ -75,10 +73,11 @@ function youtube_embed(md) {
     // so all that's left to do is to call tokenizer.
     //
     if (!silent) {
-      state.pos = serviceStart;
-      state.posMax = serviceEnd;
+        state.pos = serviceStart;
+        state.posMax = serviceEnd;
+        state.service = state.src.slice(serviceStart, serviceEnd);
       var newState = new state.md.inline.State(
-        state.src.slice(serviceStart, serviceEnd),
+        state.service,
         state.md,
         state.env,
         tokens = []
@@ -86,9 +85,10 @@ function youtube_embed(md) {
       newState.md.inline.tokenize(newState);
 
       state.push({
-          type: 'image',
+          type: 'video',
           videoID: videoID,
           tokens: tokens,
+          service: state.service,
           level: state.level
       });
     }
@@ -97,24 +97,31 @@ function youtube_embed(md) {
     state.posMax = max;
     return true;
   }
-    return youtube_return;
+    return video_return;
 }
 
+function tokenize_youtube(videoID) {
+    var embedStart = '<iframe id="ytplayer" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/';
+    var embedEnd = '" frameborder="0"/>';
+    return  embedStart + videoID + embedEnd;
+}
 
-function tokenize_youtube(md) {
+function tokenize_video(md) {
     function tokenize_return(tokens, idx, options, env, self) {
         var videoID = md.utils.escapeHtml(tokens[idx].videoID);
-        var embedStart = '<iframe id="ytplayer" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/';
-        var embedEnd = '" frameborder="0"/>';
-        return  embedStart + videoID + embedEnd;
+        var service = md.utils.escapeHtml(tokens[idx].service);
+        if (service.toLowerCase() === 'youtube'){
+            return tokenize_youtube(videoID);
+        }
+
     }
 
     return tokenize_return;
 }
 
-function youtube_plugin(md) {
-    md.renderer.rules.image = tokenize_youtube(md);
-    md.inline.ruler.before('emphasis', 'youtube', youtube_embed(md));
+function video_plugin(md) {
+    md.renderer.rules.video = tokenize_video(md);
+    md.inline.ruler.before('emphasis', 'video', video_embed(md));
 }
 
-module.exports = youtube_plugin;
+module.exports = video_plugin;

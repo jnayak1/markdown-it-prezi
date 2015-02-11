@@ -1,6 +1,6 @@
-# markdown-it-youtube
+# markdown-it-video
 
-> markdown-it plugin for embedding Youtube videos.
+> markdown-it plugin for embedding hosted videos.
 
 ## Usage
 
@@ -11,7 +11,7 @@ var md = require('markdown-it')({
   html: true,
   linkify: true,
   typography: true
-}).use(require('markdown-it-youtube'); // <-- this use(package_name) is required
+}).use(require('markdown-it-video'); // <-- this use(package_name) is required
 ```
 
 #### Example
@@ -23,12 +23,10 @@ var md = require('markdown-it')({
 is interpreted as
 
 ```html
-<iframe id="ytplayer" type="text/html" width="640" height="390"
+<p><iframe id="ytplayer" type="text/html" width="640" height="390"
   src="http://www.youtube.com/embed/dQw4w9WgXcQ"
-  frameborder="0"/>
+  frameborder="0"/></p>
 ```
 
-## Notes
-
-This is a rough prototype. What it should be doing is checking for the service type and embedding for a variety of
-services. Instead, it's hardcoded to YouTube. It's also being used as an Image plugin, and that's probably not correct.
+## Currently supported services
+ * YouTube

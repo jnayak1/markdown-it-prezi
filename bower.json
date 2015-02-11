@@ -1,10 +1,10 @@
 {
-  "name": "markdown-it-youtube",
+  "name": "markdown-it-video",
   "version": "0.1.0",
   "authors": [
     "Brian J. Geiger <bgeiger@pobox.com>"
   ],
-  "description": "Markdown-it plugin to embed a youtube video",
+  "description": "Markdown-it plugin to embed a hosted video",
   "main": "index.js",
   "kewords": [
     "markdown-it",
