@@ -7,7 +7,6 @@ function video_embed(md) {
     var code,
         serviceEnd,
         serviceStart,
-        service,
         pos,
         res,
         videoID = '',
