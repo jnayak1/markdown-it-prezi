@@ -16,6 +16,8 @@ var md = require('markdown-it')({
 
 #### Example
 
+This only works in the inline style.
+
 ```md
 @[youtube](dQw4w9WgXcQ)
 ```
