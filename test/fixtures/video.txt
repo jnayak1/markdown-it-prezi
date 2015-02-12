@@ -27,3 +27,23 @@ x
 .
 <p><iframe id="ytplayer" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/x" frameborder="0"/></p>
 .
+.
+@[]youtube()
+.
+<p>@[]youtube()</p>
+.
+.
+@[youtube]()
+.
+<p></p>
+.
+.
+@[yourtube](x)
+.
+<p>@<a href="x">yourtube</a></p>
+.
+.
+@[(youtube]
+.
+<p>@[(youtube]</p>
+.
