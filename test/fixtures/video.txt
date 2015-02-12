@@ -47,3 +47,8 @@ x
 .
 <p>@[(youtube]</p>
 .
+.
+@[toc]()
+.
+<p>@<a href="">toc</a></p>
+.
