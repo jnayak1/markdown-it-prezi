@@ -15,6 +15,10 @@ function video_embed(md) {
             oldPos = state.pos,
             max = state.posMax;
 
+        // When we add more services, (youtube) might be (youtube|vimeo|vine), for example
+        var EMBED_REGEX = /^@\[(youtube)\]\((?:\s+)?(\S+?)(?:\s+)?\)?$/im;
+
+
         if (state.src.charCodeAt(state.pos) !== 0x40/* @ */) {
             return false;
         }
@@ -22,63 +26,24 @@ function video_embed(md) {
             return false;
         }
 
-        serviceStart = state.pos + 2;
-        serviceEnd = md.helpers.parseLinkLabel(state, state.pos + 1, false);
-
-        // parser failed to find ']', so it's not a valid link
-        if (serviceEnd < 0) {
+        var match = EMBED_REGEX.exec(state.src);
+        if(!match){
             return false;
         }
 
-        pos = serviceEnd + 1;
-        if (pos < max && state.src.charCodeAt(pos) === 0x28/* ( */) {
-
-            //
-            // Inline link
-            //
-
-            // [service](  <videoID>  "title"  )
-            //    ^^ skipping these spaces
-            pos++;
-            for (; pos < max; pos++) {
-                code = state.src.charCodeAt(pos);
-                if (code !== 0x20 && code !== 0x0A) {
-                    break;
-                }
-            }
-            if (pos >= max) {
-                return false;
-            }
-
-            // [service](  <videoID>  "title"  )
-            //      ^^^^^^ parsing link destination
-            start = pos;
-            res = md.helpers.parseLinkDestination(state.src, pos, state.posMax);
-            if (res.ok && state.md.inline.validateLink(res.str)) {
-                videoID = res.str;
-                pos = res.pos;
-            } else {
-                videoID = '';
-            }
-
-            // [link](  <videoID>  "title"  )
-            //        ^^ skipping these spaces
-            start = pos;
-            for (; pos < max; pos++) {
-                code = state.src.charCodeAt(pos);
-                if (code !== 0x20 && code !== 0x0A) {
-                    break;
-                }
-            }
-
-
-            if (pos >= max || state.src.charCodeAt(pos) !== 0x29/* ) */) {
-                state.pos = oldPos;
-                return false;
-            }
-            pos++;
-
+        if (match.length < 3){
+            return false;
         }
+
+        var service = match[1];
+        var videoID = match[2];
+        if (videoID === ')') {
+            videoID = '';
+        }
+
+        serviceStart = state.pos + 2;
+        serviceEnd = md.helpers.parseLinkLabel(state, state.pos + 1, false);
+
         //
         // We found the end of the link, and know for a fact it's a valid link;
         // so all that's left to do is to call tokenizer.
@@ -88,7 +53,7 @@ function video_embed(md) {
             state.posMax = serviceEnd;
             state.service = state.src.slice(serviceStart, serviceEnd);
             var newState = new state.md.inline.State(
-                state.service,
+                service,
                 state.md,
                 state.env,
                 tokens = []
@@ -99,13 +64,13 @@ function video_embed(md) {
                 type: 'video',
                 videoID: videoID,
                 tokens: tokens,
-                service: state.service,
+                service: service,
                 level: state.level
             });
         }
 
         state.pos = pos;
-        state.posMax = max;
+        state.posMax = state.tokens.length;
         return true;
     }
 
@@ -122,8 +87,14 @@ function tokenize_video(md) {
     function tokenize_return(tokens, idx, options, env, self) {
         var videoID = md.utils.escapeHtml(tokens[idx].videoID);
         var service = md.utils.escapeHtml(tokens[idx].service);
+        if (videoID === '') {
+            return '';
+        }
+
         if (service.toLowerCase() === 'youtube') {
             return tokenize_youtube(videoID);
+        } else{
+            return('');
         }
 
     }
