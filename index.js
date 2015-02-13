@@ -2,6 +2,17 @@
 
 'use strict';
 
+// The following is from http://stackoverflow.com/a/8260383
+function youtube_parser(url){
+    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+    var match = url.match(regExp);
+    if (match&&match[7].length==11){
+        return match[7];
+    }else{
+        return url;
+    }
+}
+
 function video_embed(md) {
     function video_return(state, silent) {
         var code,
@@ -36,7 +47,7 @@ function video_embed(md) {
         }
 
         var service = match[1];
-        var videoID = match[2];
+        var videoID = youtube_parser(match[2]);
         if (videoID === ')') {
             videoID = '';
         }
