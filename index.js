@@ -2,7 +2,7 @@
 
 'use strict';
 
-// The following is from http://stackoverflow.com/a/8260383
+// The youtube_parser is from http://stackoverflow.com/a/8260383
 function youtube_parser(url){
     var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
     var match = url.match(regExp);
@@ -47,7 +47,12 @@ function video_embed(md) {
         }
 
         var service = match[1];
-        var videoID = youtube_parser(match[2]);
+        var videoID = match[2];
+        if (service.toLowerCase() == 'youtube') {
+            videoID = youtube_parser(videoID);
+        }
+
+        // If the videoID field is empty, regex currently make it the close parenthesis.
         if (videoID === ')') {
             videoID = '';
         }
