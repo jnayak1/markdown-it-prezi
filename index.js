@@ -27,7 +27,7 @@ function video_embed(md) {
             max = state.posMax;
 
         // When we add more services, (youtube) might be (youtube|vimeo|vine), for example
-        var EMBED_REGEX = /^@\[(youtube)\]\((?:\s+)?(\S+?)(?:\s+)?\)?$/im;
+        var EMBED_REGEX = /@\[(youtube)\]\((?:\s+)?(\S+?)(?:\s+)?\)?/im;
 
 
         if (state.src.charCodeAt(state.pos) !== 0x40/* @ */) {
@@ -38,6 +38,7 @@ function video_embed(md) {
         }
 
         var match = EMBED_REGEX.exec(state.src);
+
         if(!match){
             return false;
         }
@@ -45,6 +46,7 @@ function video_embed(md) {
         if (match.length < 3){
             return false;
         }
+
 
         var service = match[1];
         var videoID = match[2];

@@ -5,6 +5,16 @@ Coverage. Youtube from ID
 <p><iframe id="ytplayer" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/x" frameborder="0"/></p>
 .
 .
+@[youtube](x) a
+.
+<p><iframe id="ytplayer" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/x" frameborder="0"/> a</p>
+.
+.
+a @[youtube](x)
+.
+<p>a <iframe id="ytplayer" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/x" frameborder="0"/></p>
+.
+.
 @[youtube]( x)
 .
 <p><iframe id="ytplayer" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/x" frameborder="0"/></p>
