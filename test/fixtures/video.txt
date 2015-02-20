@@ -1,8 +1,8 @@
 Coverage. Youtube from ID
 .
-@[youtube](x)
+@[youtube](dQw4w9WgXcQ)
 .
-<p><iframe id="ytplayer" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/x" frameborder="0"/></p>
+<p><iframe id="ytplayer" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"/></p>
 .
 .
 @[youtube](x) a
@@ -65,12 +65,13 @@ x
 
 Coverage. Youtube from URL
 .
-@[youtube](http://www.youtube.com/embed/dQw4w9WgXcQ)
+@[youtube]( http://www.youtube.com/embed/dQw4w9WgXcQ )
 .
 <p><iframe id="ytplayer" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"/></p>
 .
 .
-@[youtube](http://www.youtube.com/watch?v=0zM3nApSvMg&feature=feedrec_grec_index)
+@[youtube]( http://www.youtube.com/watch?v=0zM3nApSvMg&feature=feedrec_grec_index
+ )
 .
 <p><iframe id="ytplayer" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/0zM3nApSvMg" frameborder="0"/></p>
 .
