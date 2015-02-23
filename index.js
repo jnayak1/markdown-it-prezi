@@ -96,8 +96,8 @@ function video_embed(md) {
 }
 
 function tokenize_youtube(videoID) {
-    var embedStart = '<iframe id="ytplayer" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/';
-    var embedEnd = '" frameborder="0"/>';
+    var embedStart = '<div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/';
+    var embedEnd = '" frameborder="0"/></div>';
     return embedStart + videoID + embedEnd;
 }
 
