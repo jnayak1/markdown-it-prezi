@@ -116,8 +116,8 @@ function tokenize_youtube(videoID) {
 }
 
 function tokenize_vimeo(videoID) {
-    var embedStart = '<iframe id="vimeoplayer" width="500" height="281" src="//player.vimeo.com/video/';
-    var embedEnd = '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+    var embedStart = '<div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="vimeoplayer" width="500" height="281" src="//player.vimeo.com/video/';
+    var embedEnd = '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>';
     return embedStart + videoID + embedEnd;
 }
 
