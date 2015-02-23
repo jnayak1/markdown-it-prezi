@@ -105,3 +105,100 @@ Coverage. Youtube from URL
 .
 <p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/0zM3nApSvMg" frameborder="0"/></div></p>
 .
+
+Coverage. Vimeo from ID
+.
+@[vimeo](x)
+.
+<p><iframe id="vimeoplayer" width="500" height="281" src="//player.vimeo.com/video/x" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+.
+.
+@[vimeo]( x)
+.
+<p><iframe id="vimeoplayer" width="500" height="281" src="//player.vimeo.com/video/x" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+.
+.
+@[vimeo]( x )
+.
+<p><iframe id="vimeoplayer" width="500" height="281" src="//player.vimeo.com/video/x" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+.
+.
+@[vimeo](
+x )
+.
+<p><iframe id="vimeoplayer" width="500" height="281" src="//player.vimeo.com/video/x" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+.
+.
+@[vimeo](
+x
+ )
+.
+<p><iframe id="vimeoplayer" width="500" height="281" src="//player.vimeo.com/video/x" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+.
+.
+@[]vimeo()
+.
+<p>@[]vimeo()</p>
+.
+.
+@[vimeo]()
+.
+<p></p>
+.
+.
+@[vimoe](x)
+.
+<p>@<a href="x">vimoe</a></p>
+.
+.
+@[(vimeo]
+.
+<p>@[(vimeo]</p>
+.
+.
+@[toc]()
+.
+<p>@<a href="">toc</a></p>
+.
+
+Coverage. Vimeo from URL
+.
+@[vimeo]( https://vimeo.com/119932781 )
+.
+<p><iframe id="vimeoplayer" width="500" height="281" src="//player.vimeo.com/video/119932781" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+.
+.
+@[vimeo](http://vimeo.com/119932781 )
+.
+<p><iframe id="vimeoplayer" width="500" height="281" src="//player.vimeo.com/video/119932781" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+.
+.
+@[vimeo](https://www.vimeo.com/119932781)
+.
+<p><iframe id="vimeoplayer" width="500" height="281" src="//player.vimeo.com/video/119932781" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+.
+.
+@[vimeo](http://vimeo.com/channels/mychannel/119932781)
+.
+<p><iframe id="vimeoplayer" width="500" height="281" src="//player.vimeo.com/video/119932781" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+.
+.
+@[vimeo](https://vimeo.com/groups/staffpicks/videos/119932781)
+.
+<p><iframe id="vimeoplayer" width="500" height="281" src="//player.vimeo.com/video/119932781" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+.
+.
+@[vimeo](http://vimeo.com/album/2222222/video/119932781)
+.
+<p><iframe id="vimeoplayer" width="500" height="281" src="//player.vimeo.com/video/119932781" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+.
+.
+@[vimeo](https://vimeo.com/119932781?param=test)
+.
+<p><iframe id="vimeoplayer" width="500" height="281" src="//player.vimeo.com/video/119932781" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+.
+.
+@[vimeo](http://player.vimeo.com/119932781)
+.
+<p><iframe id="vimeoplayer" width="500" height="281" src="//player.vimeo.com/video/119932781" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+.
