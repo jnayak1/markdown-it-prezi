@@ -25,9 +25,9 @@ This only works in the inline style.
 is interpreted as
 
 ```html
-<p><iframe id="ytplayer" type="text/html" width="640" height="390"
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390"
   src="http://www.youtube.com/embed/dQw4w9WgXcQ"
-  frameborder="0"/></p>
+  frameborder="0"/></div></p>
 ```
 
 Alternately, you could use a number of different YouTube URL formats rather than just the video id.
@@ -45,3 +45,4 @@ Alternately, you could use a number of different YouTube URL formats rather than
 
 ## Currently supported services
  * YouTube
+ * Vimeo
