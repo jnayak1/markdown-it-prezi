@@ -101,7 +101,7 @@ function video_embed(md) {
             });
         }
 
-        state.pos = pos;
+        state.pos = state.pos + state.src.indexOf(')');
         state.posMax = state.tokens.length;
         return true;
     }

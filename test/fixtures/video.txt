@@ -7,7 +7,13 @@ Coverage. Youtube from ID
 .
 @[youtube](x) a
 .
-<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/x" frameborder="0"/> a</p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/x" frameborder="0"/></div>a</p>
+.
+.
+@[youtube](x)
+a
+.
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/x" frameborder="0"/></div>a</p>
 .
 .
 a @[youtube](x)
