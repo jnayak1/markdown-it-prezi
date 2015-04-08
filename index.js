@@ -34,6 +34,7 @@ function video_embed(md) {
             res,
             videoID = '',
             tokens,
+            token,
             start,
             oldPos = state.pos,
             max = state.posMax;
@@ -92,13 +93,10 @@ function video_embed(md) {
             );
             newState.md.inline.tokenize(newState);
 
-            state.push({
-                type: 'video',
-                videoID: videoID,
-                tokens: tokens,
-                service: service,
-                level: state.level
-            });
+            token = state.push('video', '');
+            token.videoID = videoID;
+            token.service = service;
+            token.level = state.level;
         }
 
         state.pos = state.pos + state.src.indexOf(')');
