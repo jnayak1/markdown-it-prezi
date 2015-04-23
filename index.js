@@ -109,7 +109,7 @@ function video_embed(md) {
 
 function tokenize_youtube(videoID) {
     var embedStart = '<div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/';
-    var embedEnd = '" frameborder="0"/></div>';
+    var embedEnd = '" frameborder="0"></iframe></div>';
     return embedStart + videoID + embedEnd;
 }
 
@@ -140,9 +140,7 @@ function tokenize_video(md) {
     return tokenize_return;
 }
 
-function video_plugin(md) {
+module.exports = function video_plugin(md) {
     md.renderer.rules.video = tokenize_video(md);
     md.inline.ruler.before('emphasis', 'video', video_embed(md));
 }
-
-module.exports = video_plugin;
