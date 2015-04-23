@@ -2,46 +2,46 @@ Coverage. Youtube from ID
 .
 @[youtube](dQw4w9WgXcQ)
 .
-<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"/></div></p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"></iframe></div></p>
 .
 .
 @[youtube](x) a
 .
-<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/x" frameborder="0"/></div>a</p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/x" frameborder="0"></iframe></div>a</p>
 .
 .
 @[youtube](x)
 a
 .
-<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/x" frameborder="0"/></div>a</p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/x" frameborder="0"></iframe></div>a</p>
 .
 .
 a @[youtube](x)
 .
-<p>a <div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/x" frameborder="0"/></div></p>
+<p>a <div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/x" frameborder="0"></iframe></div></p>
 .
 .
 @[youtube]( x)
 .
-<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/x" frameborder="0"/></div></p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/x" frameborder="0"></iframe></div></p>
 .
 .
 @[youtube]( x )
 .
-<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/x" frameborder="0"/></div></p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/x" frameborder="0"></iframe></div></p>
 .
 .
 @[youtube](
 x )
 .
-<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/x" frameborder="0"/></div></p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/x" frameborder="0"></iframe></div></p>
 .
 .
 @[youtube](
 x
  )
 .
-<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/x" frameborder="0"/></div></p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/x" frameborder="0"></iframe></div></p>
 .
 .
 @[]youtube()
@@ -73,43 +73,43 @@ Coverage. Youtube from URL
 .
 @[youtube]( //www.youtube.com/embed/dQw4w9WgXcQ )
 .
-<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"/></div></p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"></iframe></div></p>
 .
 .
 @[youtube]( //www.youtube.com/watch?v=0zM3nApSvMg&feature=feedrec_grec_index
  )
 .
-<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/0zM3nApSvMg" frameborder="0"/></div></p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/0zM3nApSvMg" frameborder="0"></iframe></div></p>
 .
 .
 @[youtube](//www.youtube.com/user/IngridMichaelsonVEVO#p/a/u/1/QdK8U-VIH_o)
 .
-<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/QdK8U-VIH_o" frameborder="0"/></div></p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/QdK8U-VIH_o" frameborder="0"></iframe></div></p>
 .
 .
 @[youtube](//www.youtube.com/v/0zM3nApSvMg?fs=1&amp;hl=en_US&amp;rel=0)
 .
-<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/0zM3nApSvMg" frameborder="0"/></div></p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/0zM3nApSvMg" frameborder="0"></iframe></div></p>
 .
 .
 @[youtube](//www.youtube.com/watch?v=0zM3nApSvMg#t=0m10s)
 .
-<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/0zM3nApSvMg" frameborder="0"/></div></p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/0zM3nApSvMg" frameborder="0"></iframe></div></p>
 .
 .
 @[youtube](//www.youtube.com/embed/0zM3nApSvMg?rel=0)
 .
-<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/0zM3nApSvMg" frameborder="0"/></div></p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/0zM3nApSvMg" frameborder="0"></iframe></div></p>
 .
 .
 @[youtube](//www.youtube.com/watch?v=0zM3nApSvMg)
 .
-<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/0zM3nApSvMg" frameborder="0"/></div></p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/0zM3nApSvMg" frameborder="0"></iframe></div></p>
 .
 .
 @[youtube](http://youtu.be/0zM3nApSvMg)
 .
-<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/0zM3nApSvMg" frameborder="0"/></div></p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/0zM3nApSvMg" frameborder="0"></iframe></div></p>
 .
 
 Coverage. Vimeo from ID
