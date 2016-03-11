@@ -1,10 +1,10 @@
 {
-  "name": "markdown-it-video",
+  "name": "markdown-it-prezi",
   "version": "0.2.1",
   "authors": [
-    "Brian J. Geiger <bgeiger@pobox.com>"
+    "Jesse Nayak <jdn4ae@virginia.edu>"
   ],
-  "description": "Markdown-it plugin to embed a hosted video",
+  "description": "Markdown-it plugin to embed a hosted prezi.",
   "main": "index.js",
   "kewords": [
     "markdown-it",
