@@ -150,6 +150,8 @@ function tokenize_video(md) {
             return tokenize_vimeo(videoID);
         } else if (service.toLowerCase() === 'prezi'){
             return tokenize_prezi(videoID);
+        } else {
+            return('');
         }
 
     }
