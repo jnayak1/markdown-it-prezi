@@ -25,6 +25,16 @@ function vimeo_parser(url){
     }
 }
 
+function prezi_parser(url){
+    var regExp = /^https:\/\/prezi.com\/(.+?)\//;
+    var match = url.match(regExp);
+    if (match){
+        return match[1];
+    } else{
+        return url;
+    }
+}
+
 function video_embed(md) {
     function video_return(state, silent) {
         var code,
@@ -40,7 +50,7 @@ function video_embed(md) {
             max = state.posMax;
 
         // When we add more services, (youtube) might be (youtube|vimeo|vine), for example
-        var EMBED_REGEX = /@\[(youtube|vimeo)\]\([\s]*(.*?)[\s]*[\)]/im;
+        var EMBED_REGEX = /@\[(youtube|vimeo|prezi)\]\([\s]*(.*?)[\s]*[\)]/im;
 
 
         if (state.src.charCodeAt(state.pos) !== 0x40/* @ */) {
@@ -67,6 +77,8 @@ function video_embed(md) {
             videoID = youtube_parser(videoID);
         } else if (service.toLowerCase() == 'vimeo') {
             videoID = vimeo_parser(videoID);
+        } else if(service.toLowerCase() == 'prezi') {
+            videoID = prezi_parser(videoID);
         }
 
         // If the videoID field is empty, regex currently make it the close parenthesis.
@@ -103,7 +115,6 @@ function video_embed(md) {
         state.posMax = state.tokens.length;
         return true;
     }
-
     return video_return;
 }
 
@@ -119,6 +130,12 @@ function tokenize_vimeo(videoID) {
     return embedStart + videoID + embedEnd;
 }
 
+function tokenize_prezi(videoID){
+    var embedStart = '<div class="embed-responsive embed-responsive-16by9"><iframe id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="550" height="400" src="https://prezi.com/embed/';
+    var embedEnd = '/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;landing_data=bHVZZmNaNDBIWnNjdEVENDRhZDFNZGNIUE43MHdLNWpsdFJLb2ZHanI5N1lQVHkxSHFxazZ0UUNCRHloSXZROHh3PT0&amp;landing_sign=1kD6c0N6aYpMUS0wxnQjxzSqZlEB8qNFdxtdjYhwSuI"></iframe></div>';
+    return embedStart + videoID + embedEnd;
+}
+
 function tokenize_video(md) {
     function tokenize_return(tokens, idx, options, env, self) {
         var videoID = md.utils.escapeHtml(tokens[idx].videoID);
@@ -131,8 +148,8 @@ function tokenize_video(md) {
             return tokenize_youtube(videoID);
         } else if (service.toLowerCase() === 'vimeo') {
             return tokenize_vimeo(videoID);
-        } else{
-            return('');
+        } else if (service.toLowerCase() === 'prezi'){
+            return tokenize_prezi(videoID);
         }
 
     }
