@@ -1,29 +1,7 @@
-// Process @[youtube](youtubeVideoID)
-// Process @[vimeo](vimeoVideoID)
+// Process @[prezi](preziID)
 
 'use strict';
 
-// The youtube_parser is from http://stackoverflow.com/a/8260383
-function youtube_parser(url){
-    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
-    var match = url.match(regExp);
-    if (match&&match[7].length==11){
-        return match[7];
-    } else{
-        return url;
-    }
-}
-
-// The vimeo_parser is from http://stackoverflow.com/a/13286930
-function vimeo_parser(url){
-    var regExp = /https?:\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|)(\d+)(?:$|\/|\?)/;
-    var match = url.match(regExp);
-    if (match){
-        return match[3];
-    } else{
-        return url;
-    }
-}
 
 function prezi_parser(url){
     var regExp = /^https:\/\/prezi.com\/(.+?)\//;
@@ -50,7 +28,7 @@ function video_embed(md) {
             max = state.posMax;
 
         // When we add more services, (youtube) might be (youtube|vimeo|vine), for example
-        var EMBED_REGEX = /@\[(youtube|vimeo|prezi)\]\([\s]*(.*?)[\s]*[\)]/im;
+        var EMBED_REGEX = /@\[(prezi)\]\([\s]*(.*?)[\s]*[\)]/im;
 
 
         if (state.src.charCodeAt(state.pos) !== 0x40/* @ */) {
@@ -73,11 +51,7 @@ function video_embed(md) {
 
         var service = match[1];
         var videoID = match[2];
-        if (service.toLowerCase() == 'youtube') {
-            videoID = youtube_parser(videoID);
-        } else if (service.toLowerCase() == 'vimeo') {
-            videoID = vimeo_parser(videoID);
-        } else if(service.toLowerCase() == 'prezi') {
+        if(service.toLowerCase() == 'prezi') {
             videoID = prezi_parser(videoID);
         }
 
@@ -118,18 +92,6 @@ function video_embed(md) {
     return video_return;
 }
 
-function tokenize_youtube(videoID) {
-    var embedStart = '<div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/';
-    var embedEnd = '" frameborder="0"></iframe></div>';
-    return embedStart + videoID + embedEnd;
-}
-
-function tokenize_vimeo(videoID) {
-    var embedStart = '<div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="vimeoplayer" width="500" height="281" src="//player.vimeo.com/video/';
-    var embedEnd = '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>';
-    return embedStart + videoID + embedEnd;
-}
-
 function tokenize_prezi(videoID){
     var embedStart = '<div class="embed-responsive embed-responsive-16by9"><iframe id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="550" height="400" src="https://prezi.com/embed/';
     var embedEnd = '/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;landing_data=bHVZZmNaNDBIWnNjdEVENDRhZDFNZGNIUE43MHdLNWpsdFJLb2ZHanI5N1lQVHkxSHFxazZ0UUNCRHloSXZROHh3PT0&amp;landing_sign=1kD6c0N6aYpMUS0wxnQjxzSqZlEB8qNFdxtdjYhwSuI"></iframe></div>';
@@ -144,16 +106,11 @@ function tokenize_video(md) {
             return '';
         }
 
-        if (service.toLowerCase() === 'youtube') {
-            return tokenize_youtube(videoID);
-        } else if (service.toLowerCase() === 'vimeo') {
-            return tokenize_vimeo(videoID);
-        } else if (service.toLowerCase() === 'prezi'){
+       if (service.toLowerCase() === 'prezi'){
             return tokenize_prezi(videoID);
         } else {
             return('');
         }
-
     }
 
     return tokenize_return;
