@@ -13,14 +13,14 @@ function prezi_parser(url){
     }
 }
 
-function video_embed(md) {
-    function video_return(state, silent) {
+function prezi_embed(md) {
+    function prezi_return(state, silent) {
         var code,
             serviceEnd,
             serviceStart,
             pos,
             res,
-            videoID = '',
+            preziID = '',
             tokens,
             token,
             start,
@@ -50,14 +50,14 @@ function video_embed(md) {
 
 
         var service = match[1];
-        var videoID = match[2];
+        var preziID = match[2];
         if(service.toLowerCase() == 'prezi') {
-            videoID = prezi_parser(videoID);
+            preziID = prezi_parser(preziID);
         }
 
-        // If the videoID field is empty, regex currently make it the close parenthesis.
-        if (videoID === ')') {
-            videoID = '';
+        // If the preziID field is empty, regex currently make it the close parenthesis.
+        if (preziID === ')') {
+            preziID = '';
         }
 
         serviceStart = state.pos + 2;
@@ -79,8 +79,8 @@ function video_embed(md) {
             );
             newState.md.inline.tokenize(newState);
 
-            token = state.push('video', '');
-            token.videoID = videoID;
+            token = state.push('prezi', '');
+            token.preziID = preziID;
             token.service = service;
             token.level = state.level;
         }
@@ -89,34 +89,29 @@ function video_embed(md) {
         state.posMax = state.tokens.length;
         return true;
     }
-    return video_return;
+    return prezi_return;
 }
 
-function tokenize_prezi(videoID){
-    var embedStart = '<div class="embed-responsive embed-responsive-16by9"><iframe id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="550" height="400" src="https://prezi.com/embed/';
-    var embedEnd = '/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;landing_data=bHVZZmNaNDBIWnNjdEVENDRhZDFNZGNIUE43MHdLNWpsdFJLb2ZHanI5N1lQVHkxSHFxazZ0UUNCRHloSXZROHh3PT0&amp;landing_sign=1kD6c0N6aYpMUS0wxnQjxzSqZlEB8qNFdxtdjYhwSuI"></iframe></div>';
-    return embedStart + videoID + embedEnd;
-}
-
-function tokenize_video(md) {
+function tokenize_return_wrapper(md) {
     function tokenize_return(tokens, idx, options, env, self) {
-        var videoID = md.utils.escapeHtml(tokens[idx].videoID);
+        var preziID = md.utils.escapeHtml(tokens[idx].preziID);
         var service = md.utils.escapeHtml(tokens[idx].service);
-        if (videoID === '') {
+        if (preziID === '') {
             return '';
         }
 
        if (service.toLowerCase() === 'prezi'){
-            return tokenize_prezi(videoID);
+            var embedStart = '<div class="embed-responsive embed-responsive-16by9"><iframe id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="550" height="400" src="https://prezi.com/embed/';
+            var embedEnd = '/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;landing_data=bHVZZmNaNDBIWnNjdEVENDRhZDFNZGNIUE43MHdLNWpsdFJLb2ZHanI5N1lQVHkxSHFxazZ0UUNCRHloSXZROHh3PT0&amp;landing_sign=1kD6c0N6aYpMUS0wxnQjxzSqZlEB8qNFdxtdjYhwSuI"></iframe></div>';
+            return embedStart + preziID + embedEnd;
         } else {
             return('');
         }
     }
-
     return tokenize_return;
 }
 
-module.exports = function video_plugin(md) {
-    md.renderer.rules.video = tokenize_video(md);
-    md.inline.ruler.before('emphasis', 'video', video_embed(md));
+module.exports = function prezi_plugin(md) {
+    md.renderer.rules.prezi = tokenize_return_wrapper(md);
+    md.inline.ruler.before('emphasis', 'prezi', prezi_embed(md));
 }
